@@ -8,6 +8,13 @@ namespace BloomFilters
     /// <summary>
     /// A 32-bit Bloom filter.
     /// </summary>
+    /// <remarks>
+    /// Bloom filters normally require you to specify the false positive rate you desire,
+    /// and then infer the number of bits needed to satisfy that demand. Bloom32 instead
+    /// provides a more compact abstraction of fixed bit length, which assumes you've
+    /// already done the work to compute an upper bound on the false positive rate given
+    /// the data sets you're likely to encounter.
+    /// </remarks>
     public struct Bloom32 : IEquatable<Bloom32>
     {
         uint bits;

@@ -4,3 +4,4 @@
 *.dll
 BloomFilters.NET.csproj.FileListAbsolute.txt
 DesignTimeResolveAssemblyReferencesInput.cache
+*.user

@@ -40,6 +40,26 @@ namespace BloomFilters
         }
 
         /// <summary>
+        /// Take the union of two Bloom filters.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Bloom64 Union(Bloom64 other)
+        {
+            return new Bloom64 { bits = bits | other.bits };
+        }
+
+        /// <summary>
+        /// Take the union of two Bloom filters.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Bloom64 Intersect(Bloom64 other)
+        {
+            return new Bloom64 { bits = bits ^ other.bits };
+        }
+
+        /// <summary>
         /// Check whether the given hash code is in the set.
         /// </summary>
         /// <param name="hashCode"></param>
